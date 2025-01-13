@@ -1,21 +1,31 @@
 {
   "name": "dtx",
-  "displayName": "dtx",
-  "description": "",
+  "displayName": "UI Development Tools",
+  "description": "UI development workflow automation tools",
+  "publisher": "CAQH",
+  "private": true,
   "version": "0.0.1",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mttwhlly/dtx.git"
+  },
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.96.0",
+    "node": "^20.0.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:ui-dev-tools.showMenu"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "dtx.helloWorld",
-        "title": "Hello World"
+        "command": "ui-dev-tools.showMenu",
+        "title": "UI Dev Tools: Show Menu"
       }
     ]
   },
@@ -33,17 +43,26 @@
     "lint": "eslint src",
     "test": "vscode-test"
   },
+  "dependencies": {},
   "devDependencies": {
-    "@types/vscode": "^1.96.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.17.0",
-    "eslint": "^9.16.0",
-    "esbuild": "^0.24.0",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^5.7.2",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
-  }
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.16.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.7.2"
+  },
+  "extensionKind": ["workspace"],
+  "keywords": [
+    "vscode",
+    "extension",
+    "development",
+    "tools"
+  ]
 }
